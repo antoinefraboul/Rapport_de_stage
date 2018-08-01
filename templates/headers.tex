@@ -1,0 +1,22 @@
+% Images
+\usepackage{graphicx}
+
+% Start sections (# Title) on a newpage
+\usepackage{sectsty}
+\sectionfont{\clearpage}
+
+% Add newline after subparagraph (#### Title) and subparagraphs (##### Title)
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+
+% Header and footer
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\nouppercase{\leftmark}}
+\cfoot{\thepage\ /\ \pageref*{LastPage}}

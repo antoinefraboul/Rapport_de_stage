@@ -1,0 +1,152 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article}
+
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[no-math]{fontspec}
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{polyglossia}
+\usepackage[top=4cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage[export]{adjustbox}
+\usepackage{titlesec, blindtext, color}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{transparent}
+\usepackage{eso-pic}
+\usepackage{layout}
+\usepackage{titlesec}
+\usepackage{eurosym}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage[colorlinks, breaklinks, bookmarks, xetex]{hyperref}
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{float}
+\usepackage{enumerate}
+
+% Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fonts and typography
+%% Typography
+\defaultfontfeatures{Mapping = tex-text, Scale = MatchLowercase}
+%% Set Sans font in headings
+%\setmainfont{Times}
+%% Set polyglossia language
+\setdefaultlanguage{french}
+
+% Page
+%% Set line spacing
+\setstretch{1}
+%%Indentation settings
+\setlength{\topmargin}{0pt}
+%% Paragraph indentation
+\setlength\parindent{10pt}
+% Style
+\pagestyle{fancy}
+% Modification des styles de chapitres
+\titleformat{\chapter}%
+  {\normalfont\Huge}{\thechapter.}{14pt}{}
+\titleformat*{\section}{\bfseries\sffamily}
+\titleformat*{\subsection}{\bfseries\sffamily}
+\titleformat*{\subsubsection}{\itshape\sffamily}
+\def\tightlist{}
+
+\lstset{inputencoding=utf8,extendedchars=true,literate={á}{{\'a}}1 {ã}{{\~a}}1 {é}{{\'e}}1,numbers=left, showstringspaces=false ,stepnumber=2,firstnumber=1}
+
+% Links
+%% Hyperref comme la table des matières
+\hypersetup {
+linkcolor = black,
+citecolor = black,
+filecolor = black,
+urlcolor = black
+}
+%% Don’t use Mono font for URLs
+\urlstyle{same}
+
+% Pandoc hacks
+%% Disable section numbers
+%\setcounter{secnumdepth}{0}
+%% En-têtes et pieds de pages
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\pagestyle{fancy}
+\fancyfoot[C]{\thepage}
+\setlength{\headsep}{0.2in}
+\addtolength{\footskip}{15pt}
+\fancyhead[L]{ESIR 1}
+\fancyhead[C]{Rapport de Stage}
+\fancyhead[R]{Antoine Fraboul}
+%% Sexy chapitre style
+\newcommand{\hsp}{\hspace{20pt}}
+
+% Infos
+\title{Rapport de stage}
+\author{Antoine Fraboul}
+\date{\today}
+
+% Main
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%Page de garde
+\begin{titlepage}
+\begin{center}
+	\begin{minipage}[t]{0.48\textwidth}
+			\begin{flushleft}
+			\includegraphics [width=50mm]{./images/logoESIR.png} \\[0.5cm]
+			\end{flushleft}
+	\end{minipage}
+	\begin{minipage}[t]{0.48\textwidth}
+			\begin{flushright}
+			\includegraphics [width=30mm]{./images/logoS&G.png} \\[0.5cm]
+			\end{flushright}
+	\end{minipage}\\[2cm]
+	\begin{minipage}[t]{0.3\textwidth}
+			\begin{flushleft} \large
+			Nom \\
+      Option \\
+      Année \\
+      \vspace{5mm}
+      \emph{Responsable pédagogique :} \\
+      Nom
+      \end{flushleft}
+	\end{minipage}
+	\begin{minipage}[t]{0.6\textwidth}
+			\begin{flushright} \large
+      Entreprise \\
+      Adresse \\
+      Ville \\
+      \vspace{5mm}
+      \emph{Maitre de stage :} \\
+      Nom
+			\end{flushright}
+	\end{minipage}\\[5cm]
+  			{\huge \bfseries Rapport de Stage
+				}
+\end{center}
+\end{titlepage}
+
+\begin{titlepage}
+  \begin{center}
+    {\huge\bfseries Remerciements } \\
+    \vspace*{\fill}
+    Vous trouverez bien quelqu'un à remercier.
+    \vspace*{\fill}
+  \end{center}
+\end{titlepage}
+
+% Table des matières
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+
+% Book contents
+$body$
+
+\end{document}
